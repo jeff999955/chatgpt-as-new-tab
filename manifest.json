@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "ChatGPT as New Tab",
+    "version": "1.0",
+    "description": "Redirect the new tab and focus on the text box for ChatGPT.",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "permissions": [
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://chatgpt.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://chatgpt.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
